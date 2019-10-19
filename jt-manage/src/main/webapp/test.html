@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>测试JSON跨域问题</title>
+</head>
+<body>
+	<h1>JSON跨域请求测试01</h1>
+	<script src="http://manage.jt.com/jquery-3.1.1/jquery-3.1.1.min.js"></script>
+	<script>
+		$(function() {
+			$.ajax({
+				url:"http://manage.jt.com/jsonP/test",
+				type:"get",
+				dataType:"jsonp",
+				success:function(result){
+					console.log(result.id)
+					console.log(result.title)
+				}
+			})
+		})
+		function hello(result){
+			console.log(result.id + ":" + result.name)
+		}
+	</script>
+	<script src="http://manage.jt.com/123.json"></script>
+</body>
+</html>
